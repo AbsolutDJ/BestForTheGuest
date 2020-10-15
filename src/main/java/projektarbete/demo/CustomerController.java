@@ -1,5 +1,5 @@
 package projektarbete.demo;
 
 public class CustomerController {
-    "hajafg"
+    private int test;
 }
