@@ -4,14 +4,22 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title></title>
+
 
 </head>
 
 <style>
     body{
         background-image: url("https://arctictreehousehotel.com/wp-content/uploads/2020/03/Arctic-TreeHouse-Hotel-Northern-Lights-1999x1334px.jpg");
+        color: white;
 
     }
     button {
@@ -21,102 +29,60 @@
         line-height: 1;
         margin: 0.5em;
         padding: 1em 2em;
-        color: navajowhite ;
+        color: navajowhite;
+
     }
-    .btn {
+    h4{
+        color: black;
+    }
+    p{
+        color: black;
+    }
+    .card{
         background-color: white;
-        border: 1px solid lightblue;
-    //border-radius: 1rem;
-        color: lightblue;
-        padding: 0.5rem;
-        text-transform: lowercase;
+        padding: 20px;
+        
     }
-    .btn--block {
-        display: block;
-        width: 100%;
-    }
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    .cards__item {
-        display: flex;
-        padding: 1rem;
-    }
-    .card {
-        background-color: white;
-        border-radius: 0.25rem;
-        box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    .card__content {
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
-        padding: 1rem;
-    }
-    .card__image {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-top-left-radius: 0.25rem;
-        border-top-right-radius: 0.25rem;
-        filter: contrast(70%);
-    //filter: saturate(180%);
-        overflow: hidden;
-        position: relative;
-        transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);}
-
-    .card__image--record {
-        background-image: url('https://i.pinimg.com/originals/48/d0/1f/48d01f13f7dee18f1b9bd7794e3d427e.jpg');
-    }
-
-
-
-
-
-
-
-
 
 
 </style>
+
+
+
+
+
+
+
+
 
 
 <body>
 
 
 <button class="fill">Fill In</button>
-{{#houses}}
-<ul class="cards">
-<li class="cards__item">
-    <div class="card">
-        <img class="card__image card__image--record" src="{{picture}}" alt="Card image" style="width:100%">
-        <div class="card__content">
-            <div class="card__title"></div>
-            <p class="card__text">{{amenities}}</p>
-            <p class="card__text">{{city}}</p>
-            <p class="card__text">{{country}}</p>
-            <p class="card__text">{{description}}</p>
-            <p class="card__text">{{id}}</p>
-            <p class="card__text">{{noOfBeds}}</p>
-            <p class="card__text">{{size}}</p>
+
+<div class="container">
+    <div class="row">
+        {{#houses}}
+            <div class="col-sm">
+                <div class="card" style="width:400px" >
+                    <img class="card-img-top" src="{{picture}}" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">{{city}}, {{country}}</h4>
+                        <p class="card-text">{{description}}</p>
+                        <a href="/usersapp/users/user/{{id}}" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
 
 
 
+        {{/houses}}
 
-
-            <button class="btn btn--block card__btn">Button</button>
-        </div>
     </div>
-</li>
-</ul>
-{{/houses}}
+</div>
+
+
 
 
 
