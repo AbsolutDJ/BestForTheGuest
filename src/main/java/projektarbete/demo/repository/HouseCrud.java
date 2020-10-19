@@ -17,7 +17,7 @@ public class HouseCrud implements IHouseCrud {
     public List<House> getAllHouses() {
         List<House> houses = new ArrayList<>(); //Listan som fylls med datan ifrån databasen.
         try {
-            con = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/Zv9EODbMNc", "Zv9EODbMNc", "fRfTcsCxVf");
+            con = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/Zv9EODbMNc", "Zv9EODbMNc", "CMmrcBMcCS");
             Statement statement = con.createStatement();
             String sqlSelectAllHouses = "SELECT * FROM house";
             ResultSet resultSet = statement.executeQuery(sqlSelectAllHouses);
@@ -26,7 +26,7 @@ public class HouseCrud implements IHouseCrud {
                 house.setCountry(resultSet.getString("country"));
                 house.setCity(resultSet.getString("city"));
                 house.setSize(resultSet.getString("size"));
-                house.setNoOfBeds(resultSet.getInt("noOfBeds"));
+                house.setType(resultSet.getString("type"));
                 house.setAmenities(resultSet.getString("amenities"));
                 house.setPicture(resultSet.getString("picture"));
                 house.setDescription(resultSet.getString("description"));

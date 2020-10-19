@@ -4,7 +4,7 @@ public class House {
     private String country;
     private String city;
     private String size;
-    private Integer noOfBeds;
+    private String type;
     private String amenities;
     private String picture;
     private String description;
@@ -38,12 +38,12 @@ public class House {
         this.size = size;
     }
 
-    public Integer getNoOfBeds() {
-        return noOfBeds;
+    public String getType() {
+        return type;
     }
 
-    public void setNoOfBeds(Integer noOfBeds) {
-        this.noOfBeds = noOfBeds;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getAmenities() {
