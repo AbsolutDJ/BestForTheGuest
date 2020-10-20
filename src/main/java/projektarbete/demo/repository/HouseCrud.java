@@ -26,7 +26,7 @@ public class HouseCrud implements IHouseCrud {
                 house.setCountry(resultSet.getString("country"));
                 house.setCity(resultSet.getString("city"));
                 house.setSize(resultSet.getString("size"));
-                house.setType(resultSet.getString("type"));
+                house.setAddress(resultSet.getString("address"));
                 house.setAmenities(resultSet.getString("amenities"));
                 house.setPicture(resultSet.getString("picture"));
                 house.setDescription(resultSet.getString("description"));
