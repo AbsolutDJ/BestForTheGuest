@@ -4,7 +4,7 @@ public class House {
     private String country;
     private String city;
     private String size;
-    private String type;
+    private String address;
     private String amenities;
     private String picture;
     private String description;
@@ -38,12 +38,12 @@ public class House {
         this.size = size;
     }
 
-    public String getType() {
-        return type;
+    public String getAddress() {
+        return address;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getAmenities() {
