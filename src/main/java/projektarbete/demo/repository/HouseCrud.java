@@ -47,31 +47,6 @@ public class HouseCrud implements IHouseCrud {
     } //end getAllHouses
 
 
-    public House addHouse(House house){
-        try{
-            con = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/Zv9EODbMNc", "Zv9EODbMNc", "CMmrcBMcCS");
-            String sqlInsertHouse = "INSERT INTO myhouse (country, city,address, amenities, picture, description) VALUES(?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement statement = con.prepareStatement(sqlInsertHouse);
-
-            statement.setString(1, house.getCountry());
-            statement.setString(2, house.getCity());
-            statement.setString(3, house.getAddress());
-            statement.setString(4, house.getAmenities());
-            statement.setString(5, house.getPicture());
-            statement.setString(6, house.getDescription());
-            statement.executeUpdate();
-
-            statement.close();
-            con.close();
-            return house;
-        }catch (SQLException ex) {
-            Logger.getLogger(HouseCrud.class.getName()).log(Level.SEVERE, null, ex);
-        }// end cars
-
-        return null;
-
-    }
-
     @Override
     public House updateHouse(House house){
         try {
@@ -137,5 +112,32 @@ public class HouseCrud implements IHouseCrud {
         return null;
 
     }
+
+    public House addHouse(House house){
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/Zv9EODbMNc", "Zv9EODbMNc", "CMmrcBMcCS");
+            String sqlInsertHouse = "INSERT INTO house (country, city, address, amenities, picture, description) VALUES(?, ?, ?, ?, ?, ?)";
+            PreparedStatement statement = con.prepareStatement(sqlInsertHouse);
+
+            statement.setString(1, house.getCountry());
+            statement.setString(2, house.getCity());
+            statement.setString(3, house.getAddress());
+            statement.setString(4, house.getAmenities());
+            statement.setString(5, house.getPicture());
+            statement.setString(6, house.getDescription());
+            statement.executeUpdate();
+
+            statement.close();
+            con.close();
+            return house;
+        }catch (SQLException ex) {
+            Logger.getLogger(HouseCrud.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+
+    }
+
+
 
 }
