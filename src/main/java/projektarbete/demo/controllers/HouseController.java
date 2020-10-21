@@ -40,9 +40,8 @@ public class HouseController {
         return "privatehouseview";
 
 }
-
-    @RequestMapping("/house/add")
-    public String prepAddHouse(){
+    @GetMapping(path = "/house/addhouseview")
+    public String editHouse(Model model){
         return "addhouseview";
     }
 
@@ -59,17 +58,10 @@ public class HouseController {
     }
 
 
-    @PostMapping(path = "/house/add/test") //Byt mapping här sen, GLÖM INTE!
-     public String addHouse (@ModelAttribute("House") House house, @RequestParam Map<String, String> allFormRequestParams){
-       House newHouse = new House();
-       newHouse.setCountry(allFormRequestParams.get("country"));
-       newHouse.setCity(allFormRequestParams.get("city"));
-       newHouse.setAddress(allFormRequestParams.get("address"));
-       newHouse.setAmenities(allFormRequestParams.get("amenities"));
-       newHouse.setPicture(allFormRequestParams.get("picture"));
-       newHouse.setDescription(allFormRequestParams.get("description"));
-       houseService.addHouse(house);
-       return "redirect:/home";
-}
+    @PostMapping(path = "/house/add")
+    public String addHouse (@ModelAttribute("House") House house, @RequestParam Map<String, String> allFormRequestParams){
+        houseService.addHouse(house);
+        return "redirect:/home";
+    }
 
 }
