@@ -20,6 +20,14 @@ public class HouseService {
         return crud.getAllHouses();
     }
 
+    public House getHouseById(Integer id){ return crud.getHouseById(id); }
+
+    public House addHouse(House house){return crud.addHouse(house);}
+
+    public House updateHouse(House house){
+        return crud.updateHouse(house);
+    }
+
     
 
 }

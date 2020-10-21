@@ -5,9 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import projektarbete.demo.House;
+import projektarbete.demo.repository.HouseCrud;
 import projektarbete.demo.service.HouseService;
+
+import java.util.Map;
 
 @Controller
 public class HouseController {
@@ -36,6 +39,37 @@ public class HouseController {
         }
         return "privatehouseview";
 
+}
+
+    @RequestMapping("/house/add")
+    public String prepAddHouse(){
+        return "addhouseview";
+    }
+
+    @GetMapping(path = "/house/{id}")
+    public String getHouseById(Model model, @PathVariable Integer id){
+        model.addAttribute("house", houseService.getHouseById(id));
+        return "privatehouseview";
+    }
+
+    @GetMapping(path = "/house/edit/{id}")
+    public String editHouse(Model model,@PathVariable Integer id){
+        model.addAttribute("house", houseService.getHouseById(id));
+        return "formview";
+    }
+
+
+    @PostMapping(path = "/house/add/test") //Byt mapping här sen, GLÖM INTE!
+     public String addHouse (@ModelAttribute("House") House house, @RequestParam Map<String, String> allFormRequestParams){
+       House newHouse = new House();
+       newHouse.setCountry(allFormRequestParams.get("country"));
+       newHouse.setCity(allFormRequestParams.get("city"));
+       newHouse.setAddress(allFormRequestParams.get("address"));
+       newHouse.setAmenities(allFormRequestParams.get("amenities"));
+       newHouse.setPicture(allFormRequestParams.get("picture"));
+       newHouse.setDescription(allFormRequestParams.get("description"));
+       houseService.addHouse(house);
+       return "redirect:/home";
 }
 
 }
