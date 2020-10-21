@@ -4,9 +4,11 @@ package projektarbete.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import projektarbete.demo.House;
 import projektarbete.demo.service.HouseService;
+
+import java.util.Map;
 
 @Controller
 public class FormController {
@@ -25,6 +27,12 @@ public class FormController {
         }
         return "formview";
 
+    }
+
+    @RequestMapping(path="/house/edit/update", method = {RequestMethod.POST,RequestMethod.PUT})
+    public String updateHouse(@ModelAttribute("house") House house, @RequestParam Map<String, String> allRequestParams){
+        houseService.updateHouse(house);
+        return "redirect:/home";
     }
 
 }

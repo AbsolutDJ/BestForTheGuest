@@ -3,7 +3,6 @@ package projektarbete.demo;
 public class House {
     private String country;
     private String city;
-    private String size;
     private String address;
     private String amenities;
     private String picture;
@@ -28,14 +27,6 @@ public class House {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
     }
 
     public String getAddress() {
