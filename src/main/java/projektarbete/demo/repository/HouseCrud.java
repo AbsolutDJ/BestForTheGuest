@@ -138,6 +138,27 @@ public class HouseCrud implements IHouseCrud {
 
     }
 
+    @Override
+    public House delete(int id) {
+        PreparedStatement preparedStatement = null;
+
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/Zv9EODbMNc", "Zv9EODbMNc", "CMmrcBMcCS");
+                preparedStatement = con.prepareStatement("DELETE FROM house WHERE id=?");
+                preparedStatement.setInt(1, id);
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+                con.close();
+
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(HouseCrud.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+        return null;
+    }
+
 
 
 }

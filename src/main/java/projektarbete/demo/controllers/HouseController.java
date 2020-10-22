@@ -64,4 +64,21 @@ public class HouseController {
         return "redirect:/home";
     }
 
+    @PostMapping(path = "house/delete")
+    public String delete(House house){
+        houseService.delete(house.getId());
+        return "redirect:/home";
+    }
+
+//@RequestMapping(path = "/delete/{id}", method = RequestMethod.GET)
+    //  public String delete(@PathVariable Integer id){
+    //   delete(id);
+
+    //return "redirect:/home";
+//}
+
+
+
 }
+
+

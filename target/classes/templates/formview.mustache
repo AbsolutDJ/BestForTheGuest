@@ -75,56 +75,61 @@
 <body>
 
 <h1>UPDATE PAGE</h1>
-
 <form method = "POST" action="/house/edit/update">
     <input type="hidden" name="id" value="{{house.id}}">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Country</label>
+            <label for="inputcountry">Country</label>
             Country:.<input type="text" name="country" value="{{house.country}}" class="form-control" id="country" placeholder="Country">
         </div>
 
         <div class="form-group col-md-6">
-            <label for="inputPassword4">City</label>
+            <label for="inputcity">City</label>
             City:.<input type="text" name="city" value="{{house.city}}" class="form-control" id="city" placeholder="City">
         </div>
 
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Amenities</label>
-            Size:.<input type="text" name="size" value="{{house.id}}" class="form-control" id="size" placeholder="Size">
+            <label for="inputid">id</label>
+            Size:.<input type="text" name="id" value="{{house.id}}" class="form-control" id="id" placeholder="id">
         </div>
 
         <div class="form-group col-md-6">
-            <label for="inputPassword4">Description</label>
+            <label for="inputaddress">Address</label>
             Address:.<input type="text" name="Address" value="{{house.address}}" class="form-control" id="address" placeholder="Address">
         </div>
 
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Size</label>
+            <label for="inputamenities">Amenities</label>
             Amenities:.<input type="text" name="Amenities" value="{{house.amenities}}" class="form-control" id="amenities" placeholder="Amenities">
         </div>
 
         <div class="form-group col-md-6">
-            <label for="inputPassword4">Picture</label>
+            <label for="inputpicture">Picture</label>
             Picture:.<input type="text" name="Picture" value="{{house.picture}}" class="form-control" id="picture" placeholder="Picture">
         </div>
 
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Id</label>
+            <label for="inputdescription">Description</label>
             Description:.<input type="text" name="Description" value="{{house.description}}" class="form-control" id="description" placeholder="description">
         </div>
 
 
     </div>
         <button type="submit" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary"> <a href="/home">Go back</a></button>
+        <button type="submit" class="btn btn-primary"> <a href="/home"></a>Go back</button>
+
 </form>
+<form method = "POST" action="/house/delete">
+    <input type="hidden" name="id" value="{{house.id}}">
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>
+
 
 <div class="album py-5 bg-light">
 
