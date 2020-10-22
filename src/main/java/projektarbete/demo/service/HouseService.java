@@ -28,6 +28,9 @@ public class HouseService {
         return crud.updateHouse(house);
     }
 
+    public House delete(int id){
+        return crud.delete(id);}
+
     
 
-}
+}// end class

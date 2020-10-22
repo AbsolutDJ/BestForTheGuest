@@ -8,5 +8,6 @@ public interface IHouseCrud {
     public House updateHouse(House house);
     public House addHouse(House house);
     public House getHouseById(Integer id);
+    public House delete(int id);
 
 }// end interface
