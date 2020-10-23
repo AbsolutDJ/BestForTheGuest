@@ -21,8 +21,10 @@
 
 <style>
     body{
-        background-image: url("https://arctictreehousehotel.com/wp-content/uploads/2020/03/Arctic-TreeHouse-Hotel-Northern-Lights-1999x1334px.jpg");
-        color: white;
+        background-image: url("https://cdna.artstation.com/p/assets/images/images/014/834/822/large/ilya-galayda-mountains-environment.jpg?1545807453");
+        color:white;
+        background-size: cover;
+
 
     }
     button {
@@ -69,43 +71,48 @@
 
 <body>
 
+<header>
+    <div class="bg-dark collapse" id="navbarHeader" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">About</h4>
+                    <p class="text-muted">
+                        We all have a great interest in traveling, so what better way than to take four interests and make a project out of it. One problem that most people have when going out and traveling is finding the perfect accommodation at the perfect price.
+                        We have therefore intended to create a rental company that takes the most sought-after objects on the market and exposes them to consumers online.</p>
+                </div>
 
-<section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">NAME</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-    </div>
-</section>
-
-
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-
-        <div class="col-md-4">
-            <h2>Delete House</h2>
-            <p> </p>
-            <p><a class="btn btn-secondary" href="#" role="button">Click here!</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Add house</h2>
-            <p></p>
-            <p><a class="btn btn-secondary" href="/house/addhouseview" role="button">Click here!</a></p>
+            </div>
         </div>
     </div>
-    <hr>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="/house/addhouseview" class="navbar-brand d-flex align-items-center">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                </svg>
 
-</div>
+                <strong>Add house</strong>
+            </a>
+
+            <h1>CHAKRA RENTAL</h1>
+            <button
+
+                    class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </div>
+</header>
 
 
 
 
-<div class="album py-5 bg-light">
 
+
+<br>
 <div class="container">
         <div class="row">
             {{#houses}}
@@ -116,8 +123,8 @@
                         <p class="card-text">{{address}}, {{city}}, {{country}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary"> <a href="/house/{{id}}">View</a></button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary"> <a href="/house/edit/{{id}}">Edit</a></button>
+                                <a href="/house/{{id}}">  <button type="button" class="btn btn-primary"> View</button></a>
+                                <a href="/house/edit/{{id}}"><button type="button" class="btn btn-primary"> Edit</button></a>
                             </div>
                             <small class="text-muted">{{id}}</small>
                         </div>
@@ -126,8 +133,8 @@
             </div>
             {{/houses}}
         </div>
-    </div>
 </div>
+
 
 
 
