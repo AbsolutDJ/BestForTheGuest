@@ -70,12 +70,7 @@ public class HouseController {
         return "redirect:/home";
     }
 
-//@RequestMapping(path = "/delete/{id}", method = RequestMethod.GET)
-    //  public String delete(@PathVariable Integer id){
-    //   delete(id);
 
-    //return "redirect:/home";
-//}
 
 
 
