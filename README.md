@@ -1,2 +1,0 @@
-# Projektarbete
-Projektarbete OOAD
